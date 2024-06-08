@@ -1,0 +1,32 @@
+let nftCollection = [];
+
+function mintNFT(name, artist, year, rarity) {
+    let nft = {
+        name: name,
+        artist: artist,
+        year: year,
+        rarity: rarity
+    };
+    nftCollection.push(nft);
+}
+
+function listNFTs() {
+    nftCollection.forEach(nft => {
+        console.log("Name: " + nft.name);
+        console.log("Artist: " + nft.artist);
+        console.log("Year: " + nft.year);
+        console.log("Rarity: " + nft.rarity);
+        console.log("----------------------");
+    });
+}
+
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+mintNFT("Mona Lisa", "Leonardo da Vinci", 1503, "Rare");
+mintNFT("Starry Night", "Vincent van Gogh", 1889, "Epic");
+mintNFT("The Scream", "Edvard Munch", 1893, "Legendary");
+
+listNFTs();
+console.log("Total Supply: " + getTotalSupply());
